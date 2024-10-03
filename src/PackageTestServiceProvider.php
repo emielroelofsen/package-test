@@ -2,9 +2,9 @@
 
 namespace emielroelofsen\PackageTest;
 
+use emielroelofsen\PackageTest\Commands\PackageTestCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use emielroelofsen\PackageTest\Commands\PackageTestCommand;
 
 class PackageTestServiceProvider extends PackageServiceProvider
 {
