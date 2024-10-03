@@ -2,6 +2,7 @@
 
 namespace emielroelofsen\PackageTest;
 
+use emielroelofsen\PackageTest\Listeners\HandleOrderShipped;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Spatie\LaravelPackageTools\Package;
@@ -27,8 +28,20 @@ class PackageTestServiceProvider extends PackageServiceProvider
 
     public function packageBooted(): void
     {
-        Event::listen('App\Events\OrderShipped', function () {
-            Log::debug('Order shipped event fired');
-        });
+        $eventClass = '\App\Events\OrderShipped';
+
+        Event::listen($eventClass, HandleOrderShipped::class);
+
+        // $this->app['events']->subscribe(HandleOrderShipped::class);
+
+
+        //
+        //        if (class_exists($eventClass)) {
+        //            Event::listen($eventClass, function ($event) {
+        //                Log::info('OrderShipped event caught by package-test.', ['order_id' => $event->order->id]);
+        //            });
+        //        } else {
+        //            Log::warning("Event class {$eventClass} does not exist.");
+        //        }
     }
 }
