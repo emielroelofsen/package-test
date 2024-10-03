@@ -2,9 +2,9 @@
 
 namespace emielroelofsen\PackageTest\Tests;
 
+use emielroelofsen\PackageTest\PackageTestServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use emielroelofsen\PackageTest\PackageTestServiceProvider;
 
 class TestCase extends Orchestra
 {
