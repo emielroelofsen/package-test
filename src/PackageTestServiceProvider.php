@@ -2,11 +2,11 @@
 
 namespace emielroelofsen\PackageTest;
 
+use emielroelofsen\PackageTest\Commands\PackageTestCommand;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use emielroelofsen\PackageTest\Commands\PackageTestCommand;
 
 class PackageTestServiceProvider extends PackageServiceProvider
 {
