@@ -2,12 +2,12 @@
 
 namespace emielroelofsen\PackageTest;
 
+use emielroelofsen\PackageTest\Commands\PackageTestCommand;
 use emielroelofsen\PackageTest\Listeners\HandleOrderShipped;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Log;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use emielroelofsen\PackageTest\Commands\PackageTestCommand;
 
 class PackageTestServiceProvider extends PackageServiceProvider
 {
@@ -33,7 +33,6 @@ class PackageTestServiceProvider extends PackageServiceProvider
         Event::listen($eventClass, HandleOrderShipped::class);
 
         // $this->app['events']->subscribe(HandleOrderShipped::class);
-
 
         //
         //        if (class_exists($eventClass)) {
